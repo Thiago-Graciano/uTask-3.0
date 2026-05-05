@@ -1,3 +1,5 @@
 node_modules/
 dist/
 .env
+FrontEnd/src/pages/Kanban.tsx
+FrontEnd/src/pages/Kanban.css
