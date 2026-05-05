@@ -1,0 +1,66 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden; 
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif; 
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+
+:root {
+  /* Cores Light Mode */
+  --bg-primary: #fafafa;
+  --header-bg: #226ED8;
+  --switch-bg: linear-gradient(180deg, #FFC93F 0%, #FFC93F 50%, #FFE03F 100%);
+  --text-main: #00122B;
+  --input-bg: #EEF5FF;
+  --card-bg: #ffffff;
+  --input-border: #002D6C;
+  --error-bg: #FFE5E5;
+  --error-border: #820000;
+  --error-text: #820000;
+  --footer-bg: #114FA7;
+}
+
+body.dark-mode {
+  /* Cores Dark Mode */
+  --input-bg: #3D3D3D;
+  --bg-primary: #222222;
+  --input-border: #000000;
+  --header-bg: #333333;
+  --switch-bg: linear-gradient(180deg, #111111 0%, #222222 100%);
+  --card-bg: #3D3D3D;
+  --text-main: #FAFAFA;
+  --scroll-bar: #515151;
+  --delete-btn: #535353;
+  --kanban-blue: #3867D6;
+  --kanban-text-blue: #5C9DFF;
+  --new-task-title: #226ED8;
+  --dark-footer-bg: #111111;
+  /*Cores de erros*/
+  --error-bg: #b43131;
+  --error-border: #6f0303;
+  --error-text: #FEFEFE;
+  --icon-color: #FEFEFE;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-main);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}

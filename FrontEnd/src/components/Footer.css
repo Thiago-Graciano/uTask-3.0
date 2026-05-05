@@ -1,0 +1,32 @@
+.FooterContainer {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 60px;
+    font-size: 14px;
+    margin-top: auto; 
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* ☀️ CORES DO MODO LIGHT */
+.FooterContainer.light {
+    background-color: #175CB6;
+    color: #FAFAFA;
+}
+
+/* 🌙 CORES DO MODO DARK */
+.FooterContainer.dark {
+    background-color: #111111; 
+    color: #8C8C8C; 
+}
+
+/* Ajustes para mobile */
+@media (max-width: 768px) {
+    .FooterContainer {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+        padding: 20px;
+    }
+}

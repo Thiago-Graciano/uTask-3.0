@@ -1,0 +1,115 @@
+.header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Distribui os itens */
+    background-color: var(--header-bg) !important; 
+    transition: background 0.3s ease;
+    position: relative;
+    box-sizing: border-box;
+    z-index: 100;
+}
+
+.header.full { height: 80px; }
+.header.compact { height: 52px; }
+
+/* Lado Esquerdo: Onde fica a Logo */
+.HeaderLeft {
+    display: flex;
+    align-items: center;
+    padding-left: 160px; /* Margem de 160px conforme o Figma */
+    flex: 1; /* Ocupa espaço para ajudar no alinhamento */
+}
+
+/* Esconde a logo branca por padrão */
+.logo-light {
+    display: none;
+}
+
+/* Se o tema for LIGHT: mostra a branca e esconde a azul */
+body.light-theme .logo-light {
+    display: block;
+}
+body.light-theme .logo-dark {
+    display: none;
+}
+
+/* Se o tema for DARK: mostra a azul e esconde a branca */
+body.dark-theme .logo-dark {
+    display: block;
+}
+body.dark-theme .logo-light {
+    display: none;
+}
+
+.HeaderLogo {
+    width: 23px !important; 
+    height: 40px !important;
+    display: block !important; /* Garante visibilidade */
+}
+
+/* Título Centralizado no Header */
+.HeaderTitle {
+    color: #FFFFFF;
+    font-size: 32px;
+    font-weight: 600;
+    margin: 0;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+}
+
+/* Lado Direito: Onde fica o Switcher */
+.HeaderRight {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 48px;
+    flex: 1;
+}
+
+.ThemeSwitcher {
+    width: 50px;
+    height: 24px;
+    border-radius: 50px;
+    background: var(--switch-bg);
+    display: flex;
+    align-items: center;
+    padding: 0 2px;
+    cursor: pointer;
+    box-sizing: border-box;
+    transition: background 0.3s ease;
+}
+
+.SwitchCircle {
+    width: 20px;
+    height: 20px;
+    background-color: #FFFFFF;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.SwitchCircle img {
+    width: 14px;
+    height: 14px;
+}
+
+/* Movimento do Círculo */
+.ThemeSwitcher.light .SwitchCircle {
+    transform: translateX(0);
+}
+
+.ThemeSwitcher.dark .SwitchCircle {
+    /* Largura(50) - Circulo(20) - Paddings(4) = 26px */
+    transform: translateX(26px);
+}
+
+@media (max-width: 768px) {
+    .HeaderLeft {
+        padding: 10px;
+    }
+}
