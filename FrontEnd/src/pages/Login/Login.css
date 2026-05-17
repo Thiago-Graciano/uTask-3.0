@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+  overflow: hidden;
+  background-color: var(--bg-primary);
+}
+
+h1 {
+  color: #226ED8;
+  font-size: 42px;
+  text-align: center;
+}
+
+.Ilustracao {
+  margin: 0 48px;
+  width: 600px;
+}
+
+.TelaLogin {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  gap: 0;
+}
+
+.Login {
+  width: 374px;
+  margin-top: -80px;
+  font-size: 14px;
+  color: var(--text-main);
+}
+
+input[type="email"],
+input[type="password"],
+input[type="text"] {
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 4px;
+  padding: 12px 16px;
+  border: 1.5px solid var(--field-border, var(--input-border));
+  border-radius: 8px;
+  background-color: var(--field-bg, var(--input-bg));
+  color: var(--field-color, var(--text-main));
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  outline: none;
+}
+
+input[type="submit"] {
+  width: 100%;
+  margin-top: 20px;
+  padding: 14px;
+  border: none;
+  border-radius: 30px;
+  background-color: #226ED8;
+  color: #FFFFFF;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: rgb(16, 69, 150);
+}
+
+form p {
+  margin-bottom: 0;
+}
+
+.SeparadorVertical {
+  width: 170px;
+  margin: 32px auto;
+  border-bottom: 2px solid var(--text-main);
+}
+
+.Divisor {
+  width: 2px;
+  height: 800px;
+  margin: 48px 133px 49px 32px;
+  align-self: stretch;
+  background-color: #9CC7FBB2;
+}
+
+.EsqueceuSenha {
+  margin-top: 0;
+  color: #226ED8;
+  font-size: 80%;
+  font-weight: 700;
+}
+
+.NaoTemCadastro {
+  display: block;
+  color: var(--text-main);
+  font-size: 14px;
+  text-align: center;
+}
+
+.VerSenha {
+  position: relative;
+  width: 100%;
+}
+
+.OlhoIcon {
+  position: absolute;
+  top: 50%;
+  right: 14px;
+  width: 20px;
+  margin: 0;
+  transform: translateY(-39%);
+  cursor: pointer;
+}
+
+.InputErro {
+  --field-bg: var(--error-bg);
+  --field-border: var(--error-border);
+  --field-color: var(--error-text);
+}
+
+.MensagemErro {
+  display: block;
+  margin-top: 4px;
+  color: var(--error-text);
+  font-size: 10px;
+  text-align: left;
+}
+
+@media (max-width: 768px) {
+  .Ilustracao,
+  .Divisor {
+    display: none;
+  }
+
+  .TelaLogin {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100vh - 52px);
+    padding: 0 32px 204px;
+    box-sizing: border-box;
+  }
+
+  .Login {
+    width: 100%;
+    margin-top: 0;
+  }
+
+  h1 {
+    margin-bottom: 32px;
+    font-size: 52px;
+    text-align: center;
+  }
+}

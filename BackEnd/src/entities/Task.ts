@@ -12,13 +12,15 @@ export class Task {
     @Column({ type: "text", nullable: true })
     description: string;
 
-    @Column({ type: "varchar", default: "todo" }) // todo, doing, done
+    @Column({ type: "varchar", default: "todo" })
     status: string;
+
+    @Column({ type: "int", default: 0 })
+    order: number;
 
     @CreateDateColumn()
     createdAt: Date;
 
-    // Relacionamento: Muitas tarefas para um usuário
     @ManyToOne(() => User)
     user: User;
 }

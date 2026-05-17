@@ -1,0 +1,225 @@
+.FraseDoDiaContainer {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 24px;
+}
+
+.FraseHeader {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.FraseHeaderModal {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.FraseIconBox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 4px solid transparent;
+    box-sizing: border-box;
+    flex-shrink: 0;
+}
+
+.LampadaIcon {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+.FraseHeader h3,
+.FraseHeaderModal h3 {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    flex: 1;
+    margin: 0;
+}
+
+/* ── LIGHT ── */
+.FraseDoDiaContainer.light .FraseBanner,
+.FraseDoDiaContainer.light .FraseBotaoMobile {
+    background-color: #FFFFFF;
+}
+.FraseDoDiaContainer.light .FraseIconBox {
+    background-color: #FFF5C0;
+    border-color: #FFFCEE;
+}
+.FraseDoDiaContainer.light .FraseHeader h3,
+.FraseDoDiaContainer.light .FraseHeaderModal h3,
+.FraseDoDiaContainer.light .TextoDaFrase {
+    color: #141414;
+}
+
+/* ── DARK ── */
+.FraseDoDiaContainer.dark .FraseBanner,
+.FraseDoDiaContainer.dark .FraseBotaoMobile {
+    background-color: #3D3D3D;
+}
+.FraseDoDiaContainer.dark .FraseIconBox {
+    background-color: #3D3D3D;
+    border-color: #515151;
+}
+.FraseDoDiaContainer.dark .FraseHeader h3,
+.FraseDoDiaContainer.dark .FraseHeaderModal h3,
+.FraseDoDiaContainer.dark .TextoDaFrase {
+    color: #FAFAFA;
+}
+
+.FraseBanner {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+
+    width: 620px;
+    min-height: 119px;
+    height: auto;
+
+    padding: 24px 32px;
+    border-radius: 16px;
+    box-sizing: border-box;
+
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    transition: background-color 0.3s;
+}
+
+.TextoDaFrase {
+    margin: 0;
+    padding: 0;
+
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.45;
+
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
+
+.FraseBotaoMobile {
+    display: none;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    height: 60px;
+    padding: 0 16px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: left;
+    transition: background-color 0.3s;
+    box-sizing: border-box;
+}
+
+.FraseModalOverlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.55);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    padding: 24px;
+    box-sizing: border-box;
+}
+
+.FraseModalContent {
+    border-radius: 16px;
+    padding: 24px;
+    width: 100%;
+    max-width: 380px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+}
+
+.FraseModalContent.light {
+    background-color: #FFFFFF;
+}
+
+.FraseModalContent.dark {
+    background-color: #3D3D3D;
+}
+
+.BtnFecharFrase {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 2px solid #226ED8;
+    background: transparent;
+    color: #226ED8;
+    font-size: 0.9rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-left: auto;
+}
+
+@media (max-width: 768px) {
+  .FraseDoDiaContainer {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto 36px;
+  }
+
+  .FraseBanner {
+    display: none;
+  }
+
+  .FraseBotaoMobile {
+    display: flex;
+
+    width: 100%;
+    height: 70px;
+
+    align-items: center;
+    gap: 14px;
+
+    padding: 0 16px 0 33px;
+    box-sizing: border-box;
+
+    border: none;
+    border-radius: 8px;
+
+    font-size: 16px;
+    font-weight: 600;
+    text-align: left;
+  }
+
+  .FraseBotaoMobile .FraseIconBox {
+    width: 42px;
+    height: 42px;
+    border-width: 4px;
+  }
+
+  .FraseBotaoMobile .LampadaIcon {
+    width: 22px;
+    height: 22px;
+  }
+
+  .FraseBotaoMobile span {
+    font-size: 16px;
+    font-weight: 600;
+  }
+}
+
+.FraseDoDiaContainer.dark .FraseBotaoMobile {
+  background-color: #3D3D3D;
+  color: #FAFAFA;
+}
+
+.FraseDoDiaContainer.light .FraseBotaoMobile {
+  background-color: #FFD96A;
+  color: #FAFAFA;
+}

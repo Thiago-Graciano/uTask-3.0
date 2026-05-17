@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+*{
+  font-family: 'Poppins', sans-serif;
+}
+
+.KanbanPage {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: var(--bg-primary);
+  transition: background-color 0.3s;
+}
+
+.KanbanMain {
+  flex: 1;
+  padding: 32px 48px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1056px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.KanbanMain .fraseDoDia {
+  width: 620px;
+}
+
+.CardList {
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-right: 4px;
+}
+
+.CardList::-webkit-scrollbar { width: 4px; }
+.CardList::-webkit-scrollbar-track { background: transparent; }
+.CardList::-webkit-scrollbar-thumb {
+  background-color: var(--scroll-bar);
+  border-radius: 4px;
+}
+
+@media (max-width: 768px) {
+  .KanbanMain {
+    padding: 16px 0;
+  }
+
+  .KanbanMain .fraseDoDia {
+    width: calc(100% - 64px);
+    max-width: 100%;
+    padding: 0;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+}

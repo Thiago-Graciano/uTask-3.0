@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+  overflow: auto;
+  background-color: var(--bg-primary);
+}
+
+.TelaCadastro {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 52px);
+  gap: 40px;
+}
+
+.ParteCadastro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.ParteCadastro form {
+  width: 375px;
+  height: 440px;
+  margin-right: 0;
+  transform: translateY(-28%);
+}
+
+.ParteCadastro form h1 {
+  margin-bottom: 8px;
+  color: #226ED8;
+  font-size: 42px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.ParteCadastro form h2 {
+  margin-top: 35px;
+  margin-bottom: 13px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.DivisorTitulo {
+  width: 170px;
+  height: 1px;
+  margin: 0 auto;
+  border-top: 1px solid #3B5F91;
+}
+
+.ParteCadastro form p {
+  margin-top: 16px;
+  margin-bottom: 4px;
+  color: var(--text-main);
+  font-size: 16px;
+}
+
+.ParteCadastro form input {
+  width: 100%;
+  height: 40px;
+  border: 1px solid var(--field-border, #002D6C);
+  border-radius: 8px;
+  background-color: var(--field-bg, var(--input-bg));
+  color: var(--field-color, var(--text-main));
+  box-sizing: border-box;
+}
+
+.ParteCadastro input[type="submit"] {
+  width: 100%;
+  height: 45px;
+  margin-top: 32px;
+  padding: 0;
+  border: none;
+  border-radius: 20px;
+  background-color: #226ED8;
+  color: #FFFFFF;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+}
+
+.ParteCadastro input[type="submit"]:hover {
+  background-color: rgb(6, 6, 128);
+}
+
+.DivisorLateral {
+  width: 2px;
+  height: 800px;
+  margin-left: 133px;
+  background-color: #9CC7FBB2;
+}
+
+.ImagemLateral {
+  width: 600px;
+  max-width: 50%;
+  margin-right: 0;
+  margin-left: 48px;
+}
+
+.InputErro {
+  --field-bg: var(--error-bg, #FFE5E5);
+  --field-border: var(--error-border, #820000);
+  --field-color: var(--error-text, var(--text-main));
+}
+
+.MensagemErro {
+  display: block;
+  margin-top: 3px;
+  color: var(--error-text, #820000);
+  font-size: 10px;
+  text-align: left;
+}
+
+.CadastroModalOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.CadastroModalContent {
+  width: 410px;
+  max-width: 410px;
+  min-height: 136px;
+  padding: 28px 20px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  box-sizing: border-box;
+  border: 1px solid #6CA11E;
+  border-radius: 20px;
+  background-color: #FCFFF5;
+  box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.25);
+  text-align: left;
+}
+
+.CadastroModalContent h3 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 24px 0;
+  padding: 0;
+  color: #00122A;
+}
+
+.CadastroModalContent h3 img,
+.IconeSucesso {
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+}
+
+.CadastroModalContent h3 span {
+  color: #00122A;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.CadastroModalContent .TextoSubtitulo {
+  margin: 0;
+  color: #141414;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.4;
+  text-align: left;
+  white-space: normal;
+}
+
+@media (max-width: 768px) {
+  .ImagemLateral,
+  .DivisorLateral {
+    display: none;
+  }
+
+  .TelaCadastro {
+    flex-direction: column;
+    padding: 0 32px;
+    box-sizing: border-box;
+  }
+
+  .ParteCadastro form {
+    width: 400px;
+    max-width: 375px;
+  }
+
+  .ParteCadastro form h1 {
+    font-size: 52px;
+  }
+
+  .ParteCadastro form p {
+    margin-top: 16px;
+  }
+
+  .ParteCadastro input[type="submit"] {
+    margin-top: 32px;
+  }
+}
