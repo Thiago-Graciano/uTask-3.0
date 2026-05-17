@@ -1,0 +1,243 @@
+.TaskCardRoot {
+  border-radius: 12px;
+  padding: 16px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+  min-width: 0;
+}
+
+.TaskCardRoot.light,
+.TaskCardRoot.dark {
+  background-color: var(--card-bg);
+}
+
+.TaskCardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 8px;
+
+  cursor: grab;
+}
+
+.TaskCardHeader:active {
+  cursor: grabbing;
+}
+
+.TaskCardTitle {
+  flex: 1;
+  min-width: 0;
+
+  color: var(--text-main);
+  font-size: 15px;
+  font-weight: 600;
+
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.TaskCardTitleDone {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+.TaskCardMenuWrapper {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.TaskCardMenuButton {
+  padding: 0 4px;
+
+  border: none;
+  border-radius: 4px;
+  background: transparent;
+  color: var(--text-main);
+
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+
+  transition: color 0.2s;
+}
+
+.TaskCardMenuButton:hover {
+  color: var(--kanban-blue, #226ED8);
+}
+
+.TaskCardDropdownMenu {
+  position: absolute;
+  right: 0;
+  top: 28px;
+  z-index: 100;
+
+  min-width: 130px;
+  padding: 6px;
+
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.TaskCardDropdownMenu.light {
+  background-color: #FFFFFF;
+  border: 1px solid #EBEBEB;
+}
+
+.TaskCardDropdownMenu.dark {
+  background-color: #444444;
+  border: 1px solid #555555;
+}
+
+.TaskCardEditButton,
+.TaskCardDeleteButton {
+  width: 100%;
+  padding: 6px 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border: none;
+  border-radius: 4px;
+  background: transparent;
+  font-size: 13px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.TaskCardEditButton {
+  color: var(--edit-task);
+}
+
+.TaskCardEditButton:hover {
+  background-color: rgba(34, 110, 216, 0.1);
+}
+
+.TaskCardDeleteButton {
+  color: var(--Trash-task);
+}
+
+.TaskCardDeleteButton:hover {
+  background-color: rgba(229, 57, 53, 0.1);
+}
+
+.TaskCardEditButton img,
+.TaskCardDeleteButton img {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
+.TaskCardDescriptionButton {
+  width: fit-content;
+  padding: 0;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+
+  border: none;
+  background: transparent;
+  color: var(--kanban-text-blue, #226ED8);
+
+  font-size: 12px;
+  font-weight: 300;
+  cursor: pointer;
+}
+
+.TaskCardDescription {
+  width: 100%;
+  margin: 0;
+
+  color: var(--text-main);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.5;
+
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.TaskCardActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+
+  margin-top: 4px;
+}
+
+.TaskCardMoveButton {
+  width: 32px;
+  height: 32px;
+  padding: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+  cursor: pointer;
+
+  line-height: 0;
+  transition: all 0.2s;
+}
+
+.TaskCardMoveIcon {
+  display: block;
+  pointer-events: none;
+  object-fit: contain;
+}
+
+.TaskCardMoveIconNext {
+  width: 13px;
+  height: 13px;
+}
+
+.TaskCardMoveIconBack {
+  width: 13px;
+  height: 13px;
+}
+
+.TaskCardMoveIconBackBranco {
+  width: 22px;
+  height: 22px;
+}
+
+.TaskCardMoveIconReplay {
+  width: 18px;
+  height: 18px;
+}
+
+.TaskCardMoveIconBackHover {
+  display: none;
+}
+
+.TaskCardMoveButtonBack:hover .TaskCardMoveIconBackDefault {
+  display: none;
+}
+
+.TaskCardMoveButtonBack:hover .TaskCardMoveIconBackHover {
+  display: block;
+}
+
+.TaskCardMoveButtonBack {
+  border: 2px solid var(--kanban-blue, #226ED8);
+  background: transparent;
+  color: var(--kanban-blue, #226ED8);
+}
+
+.TaskCardMoveButtonBack:hover {
+  background: var(--kanban-blue, #226ED8);
+  color: #FFFFFF;
+}
+
+.TaskCardMoveButtonForward {
+  border: none;
+  background: var(--kanban-blue, #226ED8);
+  color: #FFFFFF;
+}
+
+.TaskCardMoveButtonForward:hover {
+  filter: brightness(0.9);
+}

@@ -1,0 +1,93 @@
+.KanbanColumnRoot {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  min-width: 0;
+}
+
+.KanbanColumnHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0 4px;
+}
+
+.KanbanColumnTitle {
+  color: var(--text-main);
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.KanbanColumnAddButton {
+  width: 36px;
+  height: 36px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+  border: 2px solid var(--kanban-blue, #226ED8);
+  background: transparent;
+  color: var(--kanban-blue, #226ED8);
+
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.KanbanColumnContent {
+  min-height: 530px;
+  max-height: 530px;
+  padding: 16px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  border-radius: 16px;
+  overflow-y: auto;
+}
+
+.KanbanColumnContent.light,
+.KanbanColumnContent.dark {
+  background-color: var(--bg-column);
+}
+
+.KanbanColumnContent::-webkit-scrollbar {
+  width: 4px;
+}
+
+.KanbanColumnContent::-webkit-scrollbar-thumb {
+  background-color: var(--scroll-bar);
+  border-radius: 4px;
+}
+
+@media (max-width: 768px) {
+  .KanbanColumnRoot {
+    display: none !important;
+    width: 100%;
+    min-width: 0;
+  }
+
+  .KanbanColumnRoot.KanbanColumnRootActive {
+    display: flex !important;
+  }
+
+  .KanbanColumnHeader {
+    width: 100%;
+    padding: 0;
+  }
+
+  .KanbanColumnContent {
+    width: 100%;
+    min-width: 0;
+    min-height: 580px;
+    max-height: 580px;
+
+    box-sizing: border-box;
+    overflow-y: auto;
+  }
+}

@@ -8,7 +8,7 @@ html, body {
   width: 100%;
   min-height: 100vh;
   overflow-x: hidden; 
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif; 
+  font-family: 'Poppins'; 
 }
 
 #root {
@@ -28,14 +28,22 @@ html, body {
   --input-bg: #EEF5FF;
   --card-bg: #ffffff;
   --input-border: #002D6C;
+  --kanban-text-blue: #002D6C;
+  --scroll-bar: #C4C4C4;
+  --Trash-task: #DF0000;
+  --footer-bg: #114FA7;
+  --edit-task: #141414;
+  --bg-column: #EEEEEE;
+  /*Cores de erros*/
   --error-bg: #FFE5E5;
   --error-border: #820000;
   --error-text: #820000;
-  --footer-bg: #114FA7;
 }
 
 body.dark-mode {
   /* Cores Dark Mode */
+  --Trash-task: #FFAFAF;
+  --edit-task: #FAFAFA;
   --input-bg: #3D3D3D;
   --bg-primary: #222222;
   --input-border: #000000;
@@ -49,10 +57,11 @@ body.dark-mode {
   --kanban-text-blue: #5C9DFF;
   --new-task-title: #226ED8;
   --dark-footer-bg: #111111;
+  --bg-column: #333333;
   /*Cores de erros*/
-  --error-bg: #b43131;
-  --error-border: #6f0303;
-  --error-text: #FEFEFE;
+  --error-bg: #6f0303;
+  --error-border: #4d0000;
+  --error-text: #fefefe;
   --icon-color: #FEFEFE;
 }
 

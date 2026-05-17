@@ -1,0 +1,97 @@
+.KanbanBoardWrapper {
+  display: flex;
+  align-items: flex-start;
+  gap: 0;
+}
+
+.KanbanBoard {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+
+  flex: 1;
+  min-width: 0;
+}
+
+.MobileNavArrow {
+  display: none;
+}
+
+.KanbanBoardMobileArrowIcon {
+  width: 13px;
+  height: 13px;
+  display: block;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+.MobileDots {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .KanbanBoardWrapper {
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: 32px 1fr 32px;
+    align-items: center;
+    gap: 0;
+  }
+
+  .KanbanBoard {
+    width: 100%;
+    min-width: 0;
+
+    display: block;
+
+    padding: 0;
+    overflow: hidden;
+  }
+
+  .MobileNavArrow {
+  width: 32px;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  border: none;
+  background: transparent;
+
+  cursor: pointer;
+
+  transition: opacity 0.2s;
+  z-index: 2;
+}
+
+  .MobileNavArrow:disabled {
+    opacity: 0.2;
+    cursor: default;
+  }
+
+  .MobileDots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+
+    margin-top: 16px;
+  }
+
+  .MobileDot {
+    width: 8px;
+    height: 8px;
+
+    border-radius: 50%;
+    background-color: #CCCCCC;
+
+    transition: background-color 0.2s;
+  }
+
+  .MobileDot.DotActive {
+    background-color: var(--kanban-blue, #226ED8);
+  }
+}

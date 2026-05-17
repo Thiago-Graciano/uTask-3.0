@@ -1,0 +1,243 @@
+.TaskModalOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+  box-sizing: border-box;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.TaskModalContent {
+  width: 620px;
+  min-height: 520px;
+  padding: 30px 0 40px;
+
+  box-sizing: border-box;
+  border: none;
+  border-radius: 26px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+}
+
+.TaskModalContent.light,
+.TaskModalContent.dark {
+  background-color: var(--card-bg);
+}
+
+.TaskModalHeader {
+  width: 540px;
+  margin: 0 auto 39px;
+
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+}
+
+.TaskModalTitle {
+  grid-column: 2;
+  margin: 0;
+
+  color: var(--new-task-title, #226ED8);
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+  text-underline-offset: 10px;
+}
+
+.TaskModalCloseButton {
+  grid-column: 3;
+  justify-self: end;
+
+  width: 42px;
+  height: 42px;
+
+  border-radius: 50%;
+  border: 3px solid var(--new-task-title, #226ED8);
+  background: transparent;
+  color: var(--new-task-title, #226ED8);
+
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.TaskModalForm {
+  width: 540px;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.TaskModalForm label {
+  margin: 0 0 10px;
+
+  color: var(--text-main);
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 100%;
+  text-align: left;
+}
+
+.TaskModalForm input,
+.TaskModalForm textarea {
+  width: 540px;
+  margin-top: 6px;
+
+  border: none;
+  border-radius: 12px;
+  box-sizing: border-box;
+  outline: none;
+
+  color: var(--text-main);
+  font-size: 18px;
+}
+
+.TaskModalForm input {
+  height: 56px;
+  padding: 0 22px;
+  margin-bottom: 20px;
+}
+
+.TaskModalForm textarea {
+  height: 128px;
+  padding: 16px 22px;
+  margin-bottom: 40px;
+
+  resize: none;
+  line-height: 1.45;
+}
+
+.TaskModalContent.light .TaskModalForm input,
+.TaskModalContent.light .TaskModalForm textarea {
+  background-color: var(--input-bg);
+  color: var(--text-main);
+}
+
+.TaskModalContent.dark .TaskModalForm input,
+.TaskModalContent.dark .TaskModalForm textarea {
+  background-color: var(--header-bg);
+  color: var(--text-main);
+}
+
+.TaskModalContent.light .TaskModalForm input::placeholder,
+.TaskModalContent.light .TaskModalForm textarea::placeholder {
+  color: rgba(0, 18, 43, 0.55);
+}
+
+.TaskModalContent.dark .TaskModalForm input::placeholder,
+.TaskModalContent.dark .TaskModalForm textarea::placeholder {
+  color: rgba(250, 250, 250, 0.55);
+}
+
+.TaskModalSubmitButton {
+  width: 374px;
+  height: 58px;
+  margin: 0 auto;
+  padding: 0;
+
+  border: none;
+  border-radius: 999px;
+  background-color: var(--kanban-blue, #226ED8);
+  color: #FFFFFF;
+
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+
+  transition: filter 0.2s;
+}
+
+.TaskModalSubmitButton:hover {
+  filter: brightness(0.92);
+}
+
+@media (max-width: 768px) {
+  .TaskModalOverlay {
+    padding: 16px;
+    align-items: center;
+  }
+
+  .TaskModalContent {
+    width: 300px;
+    max-width: calc(100vw - 32px);
+    min-height: auto;
+    padding: 28px 20px 30px;
+    border-radius: 20px;
+  }
+
+  .TaskModalHeader {
+    width: 100%;
+    margin: 0 0 28px;
+
+    display: grid;
+    grid-template-columns: 32px 1fr 32px;
+    align-items: center;
+  }
+
+  .TaskModalTitle {
+    grid-column: 2;
+    font-size: 20px;
+    text-align: center;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 7px;
+  }
+
+  .TaskModalCloseButton {
+    grid-column: 3;
+
+    width: 30px;
+    height: 30px;
+
+    border-width: 2px;
+    font-size: 14px;
+  }
+
+  .TaskModalForm {
+    width: 100%;
+  }
+
+  .TaskModalForm label {
+    font-size: 13px;
+    margin-bottom: 8px;
+  }
+
+  .TaskModalForm input,
+  .TaskModalForm textarea {
+    width: 100%;
+    margin-top: 4px;
+
+    border-radius: 8px;
+    font-size: 14px;
+  }
+
+  .TaskModalForm input {
+    height: 42px;
+    padding: 0 14px;
+    margin-bottom: 18px;
+  }
+
+  .TaskModalForm textarea {
+    height: 116px;
+    padding: 12px 14px;
+    margin-bottom: 28px;
+  }
+
+  .TaskModalSubmitButton {
+    width: 100%;
+    height: 44px;
+    font-size: 14px;
+  }
+}
