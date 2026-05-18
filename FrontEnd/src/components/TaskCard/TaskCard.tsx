@@ -16,6 +16,11 @@ import NavigateNextBranco from '../../assets/navigate_next_branco.svg'
 import NavigateNextCinza from '../../assets/navigate_next_cinza.svg'
 import NavigateBeforeBranco from '../../assets/navigate_before_24dp_FAFAFA.svg'
 
+import ExpandMoreBranco from '../../assets/expand_more_branco.svg'
+import ExpandMorePreto from '../../assets/expand_more_preto.svg'
+import ExpandLessBranco from '../../assets/expand_less_branco.svg'
+import ExpandLessPreto from '../../assets/expand_less_preto.svg'
+
 import ReplayBranco from '../../assets/replay_branco.svg'
 import ReplayCinza from '../../assets/replay_cinza.svg'
 
@@ -60,6 +65,14 @@ function TaskCard({
   const nextIcon = theme === 'dark' ? NavigateNextCinza : NavigateNextBranco
   const replayIcon = theme === 'dark' ? ReplayCinza : ReplayBranco
 
+  const descriptionIcon = isDescriptionOpen
+    ? theme === 'dark'
+      ? ExpandLessBranco
+      : ExpandLessPreto
+    : theme === 'dark'
+      ? ExpandMoreBranco
+      : ExpandMorePreto
+
   return (
     <Draggable draggableId={task.id} index={index}>
       {(provided) => (
@@ -70,9 +83,8 @@ function TaskCard({
         >
           <div className="TaskCardHeader" {...provided.dragHandleProps}>
             <strong
-              className={`TaskCardTitle ${
-                task.status === 'done' ? 'TaskCardTitleDone' : ''
-              }`}
+              className={`TaskCardTitle ${task.status === 'done' ? 'TaskCardTitleDone' : ''
+                }`}
             >
               {task.title}
             </strong>
@@ -114,11 +126,20 @@ function TaskCard({
 
           {task.description && (
             <button
-              className="TaskCardDescriptionButton"
+              className={`TaskCardDescriptionButton ${isDescriptionOpen ? 'TaskCardDescriptionButtonOpen' : ''
+                }`}
               type="button"
               onClick={() => onToggleDescription(task.id)}
             >
-              {isDescriptionOpen ? 'Esconder descrição ▲' : 'Ler descrição ▼'}
+              <span>
+                {isDescriptionOpen ? 'Esconder descrição' : 'Ler descrição'}
+              </span>
+
+              <img
+                src={descriptionIcon}
+                alt=""
+                className="TaskCardDescriptionIcon"
+              />
             </button>
           )}
 
@@ -168,10 +189,10 @@ function TaskCard({
                 onClick={() => onMove(task, 'reset')}
               >
                 <img
-                    src={replayIcon}
-                    alt="Reiniciar task"
-                    className="TaskCardMoveIcon TaskCardMoveIconReplay"
-                  />
+                  src={replayIcon}
+                  alt="Reiniciar task"
+                  className="TaskCardMoveIcon TaskCardMoveIconReplay"
+                />
               </button>
             )}
           </div>
